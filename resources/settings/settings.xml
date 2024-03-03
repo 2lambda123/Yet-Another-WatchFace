@@ -1,13 +1,13 @@
 <settings>
 
     <setting propertyKey="@Properties.appVersion" title="@Strings.AppVersionTitle">
-        <settingConfig type="alphaNumeric" readonly="true" /> 
+        <settingConfig type="alphaNumeric" readonly="true" />
     </setting>
-   
+
     <setting propertyKey="@Properties.is-show-seconds" title="@Strings.isShowSecondsTitle">
     	<settingConfig type="boolean"></settingConfig>
     </setting>
-   
+
     <setting propertyKey="@Properties.BackgroundColor" title="@Strings.BackgroundColorTitle">
         <settingConfig type="list">
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
@@ -20,7 +20,7 @@
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
             <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
             <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
-            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>            
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
             <listEntry value="0x0000FF">@Strings.ColorBlue</listEntry>
             <listEntry value="0xFF0000">@Strings.ColorRed</listEntry>
             <listEntry value="0x32CD32">@Strings.ColorLimeGreen</listEntry>
@@ -35,7 +35,7 @@
             <listEntry value="0xF88E46">@Strings.ColorOrange</listEntry>
         </settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.BrightColor" title="@Strings.BrightColorTitle">
         <settingConfig type="list">
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
@@ -50,35 +50,35 @@
             <listEntry value="0x000000">@Strings.ColorBlack</listEntry>
             <listEntry value="0x555555">@Strings.ColorDarkGray</listEntry>
             <listEntry value="0xAAAAAA">@Strings.ColorLightGray</listEntry>
-            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>            
+            <listEntry value="0xFFFFFF">@Strings.ColorWhite</listEntry>
         </settingConfig>
     </setting>
-    
 
-    
-    
+
+
+
     <setting propertyKey="@Properties.is-show-weather" title="@Strings.isShowWeatherTitle">
     	<settingConfig type="boolean"></settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.weather-provider" title="@Strings.weatherProviderTitle">
      	<settingConfig type="list">
     		<listEntry value="0">@Strings.openWeatherTitle</listEntry>
     		<listEntry value="1">@Strings.darkSkyTitle</listEntry>
-    	</settingConfig>   
+    	</settingConfig>
     </setting>
-    
+
    	<setting propertyKey="@Properties.WeatherApiKey" title="@Strings.WeatherApiKeyTitle">
     	<settingConfig type="alphaNumeric"></settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.tempSystem" title="@Strings.TempSystemTitle">
     	<settingConfig type="list">
     		<listEntry value="1">@Strings.Celsius</listEntry>
     		<listEntry value="2">@Strings.Farenheit</listEntry>
     	</settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.windSystem" title="@Strings.WindSystemTitle">
     	<settingConfig type="list">
     		<listEntry value="0">@Strings.KilometersPh</listEntry>
@@ -86,19 +86,19 @@
     		<listEntry value="2">@Strings.Meters</listEntry>
     		<listEntry value="3">@Strings.MilesPh</listEntry>
     	</settingConfig>
-    </setting> 
-    
+    </setting>
+
    	<setting propertyKey="@Properties.is-show-city" title="@Strings.IsShowCityTitle">
     	<settingConfig type="boolean"></settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.city-align" title="@Strings.CityAlignTitle">
     	<settingConfig type="list">
     		<listEntry value="0">@Strings.Left</listEntry>
     		<listEntry value="1">@Strings.Center</listEntry>
     	</settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.show-alarm" title="@Strings.IsShowAlarmTitle">
     	<settingConfig type = "list">
     		<listEntry value = "0">@Strings.ShowNever</listEntry>
@@ -106,7 +106,7 @@
     		<listEntry value = "2">@Strings.ShowAlways</listEntry>
     	</settingConfig>
     </setting>
-    
+
     <setting propertyKey="@Properties.show-message" title="@Strings.IsShowMessageTitle">
     	<settingConfig type = "list">
     		<listEntry value = "0">@Strings.ShowNever</listEntry>
@@ -114,9 +114,9 @@
     		<listEntry value = "2">@Strings.ShowAlways</listEntry>
     	</settingConfig>
     </setting>
- 
 
-       
+
+
     <setting propertyKey = "@Properties.field-3" title = "@Strings.field_3_title">
     	<settingConfig type = "list">
     		<listEntry value = "0">@Strings.DisplayExtraTz</listEntry>
@@ -130,7 +130,7 @@
     		<listEntry value = "10">@Strings.DisplaySunEvent</listEntry>
     	</settingConfig>
     </setting>
-    
+
     <setting propertyKey = "@Properties.field-4" title = "@Strings.field_4_title">
     	<settingConfig type = "list">
     		<listEntry value = "0">@Strings.DisplayExtraTz</listEntry>
@@ -144,7 +144,7 @@
     		<listEntry value = "10">@Strings.DisplaySunEvent</listEntry>
     	</settingConfig>
     </setting>
-    
+
     <setting propertyKey = "@Properties.field-5" title = "@Strings.field_5_title">
     	<settingConfig type = "list">
     		<listEntry value = "0">@Strings.DisplayExtraTz</listEntry>
@@ -159,5 +159,5 @@
     	</settingConfig>
     </setting>
 
-    
+
 </settings>
