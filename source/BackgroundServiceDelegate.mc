@@ -8,16 +8,16 @@ using Toybox.Application as App;
 // is triggered by the system.
 //
 (:background)
-class BackgroundServiceDelegate extends Sys.ServiceDelegate 
+class BackgroundServiceDelegate extends Sys.ServiceDelegate
 {
-	hidden var _received = {}; 
-	 
-	function initialize() 
+	hidden var _received = {};
+
+	function initialize()
 	{
 		Sys.ServiceDelegate.initialize();
 	}
-	
-    function onTemporalEvent() 
+
+    function onTemporalEvent()
     {
     	try
     	{
@@ -37,10 +37,10 @@ class BackgroundServiceDelegate extends Sys.ServiceDelegate
 			Sys.println("temp event error: " + ex.getErrorMessage());
 			_received.put("isErr", true);
 			Background.exit(_received);
-		}		
+		}
     }
-    
-    
+
+
     function RequestUpdate()
     {
 		var weatherProviders = ["OpenWeather", "DarkSky"];
@@ -48,21 +48,21 @@ class BackgroundServiceDelegate extends Sys.ServiceDelegate
 		var weatherProvider = Setting.GetWeatherProvider();
 		var location = Setting.GetLastKnownLocation();
 
-		var versionsParam = Lang.format("&fw=$1$.$2$", Sys.getDeviceSettings().firmwareVersion) 
+		var versionsParam = Lang.format("&fw=$1$.$2$", Sys.getDeviceSettings().firmwareVersion)
 			+ Lang.format("&ciqv=$1$.$2$.$3$", Sys.getDeviceSettings().monkeyVersion);
-			
-		var providerParam = (weatherProvider == 1) 
+
+		var providerParam = (weatherProvider == 1)
 			? Lang.format("&wapiKey=$1$&wp=$2$", [weatherApiKey, weatherProviders[weatherProvider]])
-			: Lang.format("&wp=$1$", [weatherProviders[weatherProvider]]); 
-		
-		
+			: Lang.format("&wp=$1$", [weatherProviders[weatherProvider]]);
+
+
 		var locationParam = (location != null)
 			? Lang.format("&lat=$1$&lon=$2$", [location[0], location[1]])
 			: "";
-		
-		var deviceParam = Lang.format("&did=$1$&dn=$2$&av=$3$", 
+
+		var deviceParam = Lang.format("&did=$1$&dn=$2$&av=$3$",
 			[Sys.getDeviceSettings().uniqueIdentifier, Setting.GetDeviceName(), Setting.GetAppVersion()]);
-			
+
 		var currencyParam = (Setting.GetIsShowExchangeRate())
 			? Lang.format("&bc=$1$&tc=$2$", [Setting.GetBaseCurrency(), Setting.GetTargetCurrency()])
 			: "";
@@ -77,8 +77,8 @@ class BackgroundServiceDelegate extends Sys.ServiceDelegate
 			locationParam,
 			providerParam,
 			currencyParam,
-			versionsParam]);			
-			
+			versionsParam]);
+
 		//Sys.println(" :: update request " + url);
 
         var options = {
@@ -86,16 +86,16 @@ class BackgroundServiceDelegate extends Sys.ServiceDelegate
           :responseType => Comm.HTTP_RESPONSE_CONTENT_TYPE_JSON
         };
 
-    	Comm.makeWebRequest(url, {}, options, method(:OnReceiveUpdate));    	
+    	Comm.makeWebRequest(url, {}, options, method(:OnReceiveUpdate));
     }
-    
-    
+
+
     function OnReceiveUpdate(responseCode, data)
 	{
 		try
 		{
 //			Sys.println("weather data: " + data + "\n code: " + responseCode);
-		
+
 			if (responseCode == 200)
 			{
 				_received = data;
